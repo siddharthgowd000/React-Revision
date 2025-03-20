@@ -1,0 +1,54 @@
+REACT JS OPTIMIZATION TIPS :
+
+----------------------------------------------------------------------------------------------
+useId() - hook =>
+
+1. use useId() hook to bind lable and input elements (elements that require binding with manual id's , instead use useId())
+	WHY:
+		1. Manually assigning IDs can lead to conflicts when multiple instances of InputBox exist in the DOM. 
+	 	2. Unlike random-generated IDs, useId ensures the ID remains the same throughout the component’s lifecycle.
+
+	CODE:
+		const amountInputId = useId() //hook 
+		<label  htmlFor={amountInputId}">
+                    {label}
+                </label>
+                <input
+                    id = {amountInputId}
+                />
+
+---------------------------------------------------------------------------------------------------
+
+
+2.  use <Link /> instead <a><a/> tag because, a-tag re-renders while page which is not good for oprimization :)
+
+3. <NavLink
+		className={({isActive}) =>
+		`block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+		}
+		>
+		Home
+	</NavLink>
+
+	=> NavLink return the isActive callback function to say a particular tab is active or not with direct connection with router.
+
+4. loader -> study from doc
+
+	code:
+	  		<Route 
+				loader={getGithubInfo}
+				path="github" 
+				element={<Github />} />
+			</Route>
+		// components.Github.jsx
+
+			export const getGithubInfo = async() =>{
+			const response = await fetch('https://api.github.com/users/siddharthgowd000')
+			return response.json()
+
+	HOW TO USE: 
+			data = useLoaderData() //hook , this will directly give you response data
+
+	WHY: 1. Loader makes you fetch data fasster , even you hover that button with route path.
+		 2. It Caches response data Automatically 
+}
