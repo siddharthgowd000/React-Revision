@@ -22,6 +22,8 @@ useId() - hook =>
 
 2.  use <Link /> instead <a><a/> tag because, a-tag re-renders while page which is not good for oprimization :)
 
+---------------------------------------------------------------------------------------------------
+
 3. <NavLink
 		className={({isActive}) =>
 		`block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
@@ -31,6 +33,8 @@ useId() - hook =>
 	</NavLink>
 
 	=> NavLink return the isActive callback function to say a particular tab is active or not with direct connection with router.
+
+---------------------------------------------------------------------------------------------------
 
 4. loader -> study from doc
 
@@ -52,3 +56,40 @@ useId() - hook =>
 	WHY: 1. Loader makes you fetch data fasster , even you hover that button with route path.
 		 2. It Caches response data Automatically 
 }
+
+
+---------------------------------------------------------------------------------------------------
+
+Useful Websites:
+
+		1. Magic UI - fronted
+		2. Appwrite - backend as a service
+		3. TinyMCE  - Text Editors
+		4. React Hook Form - better for handling forms
+
+---------------------------------------------------------------------------------------------------
+.env :
+
+	1. different libraries have different accessing env variable
+	example: for only react : REACT_APP_SECRET_KEY => process.env.REACT_APP_SECRET_KEY
+				react + vite: VITE_APP_SECRET_KEY => import.meta.env.VITE_APP_SECRET_KEY 
+				like diff for nextjs etc..,
+
+---------------------------------------------------------------------------------------------------
+
+regxr:
+
+	for validation of emails to highlight automatically etc.,
+
+---------------------------------------------------------------------------------------------------
+
+react hook form
+
+	1. have handleSubmit(ourfunction) event handler, 
+	2. have register which contains the state (details of submitted form), helps us to manage state automatically
+
+	const {register, handleSubmit} = useForm()
+
+
+---------------------------------------------------------------------------------------------------
+
